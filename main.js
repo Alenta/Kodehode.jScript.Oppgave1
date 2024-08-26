@@ -30,7 +30,7 @@ received is an even number.
 HINT: Use the modulo operator (%) Google it! 😊
 ******************************************************************************/
 export const oddOrEven = (number) => {
-  if(number % 2 === 0)
+  if(number % 2 === 0) //If there is no remainder after %2, number is even
   {
     return "Even";
   }
@@ -50,10 +50,10 @@ Example: "This is cool" should return "THIS IS COOL!"
 
 ******************************************************************************/
 export function makeMeLoud(inputString) {
-  let upperCaseString = new String;
-  upperCaseString = inputString.toUpperCase();
+  let upperCaseString; //Create new string
+  upperCaseString = inputString.toUpperCase(); //toUpperCase() changes all lowercase to uppercase
 
-  upperCaseString = upperCaseString +"!";
+  upperCaseString = upperCaseString +"!"; //Append "!"
   return upperCaseString;
 }
 
@@ -79,12 +79,12 @@ The function should return:
 ******************************************************************************/
 
 export const greeter = (name, time) => {
-  if(time < 0) return "Invalid time";
-  if(time >= 0 && time <= 5) return "Good night "+name;
-  if(time >= 6 && time <= 11) return "Good morning "+name;
-  if(time >= 12 && time <= 17) return "Good day "+name;
-  if(time >= 18 && time <= 23) return "Good evening "+name;
-  if(time > 23) return "Invalid time";
+  if(time < 0) return "Invalid time"; //Less than 0
+  if(time >= 0 && time <= 5) return "Good night "+name; //More or equal to 0, less or equal to 5
+  if(time >= 6 && time <= 11) return "Good morning "+name; //More or equal to 6, less or equal to 11
+  if(time >= 12 && time <= 17) return "Good day "+name; //More or equal to 12, less or equal to 17
+  if(time >= 18 && time <= 23) return "Good evening "+name; //More or equal to 18, less or equal to 23
+  if(time > 23) return "Invalid time"; //More than 23
 }
 
 /******************************************************************************
@@ -102,7 +102,7 @@ Example 2: ["One", "Two", "Three", "Four", "Five", "Six"] should return
 ******************************************************************************/
 
 export function arrayTrimmer(array) {
-  array = array.slice(1,-1);
+  array = array.slice(1,-1); //Slice first item from the start, and first item from the back.
 
   return array;
 }
@@ -127,8 +127,8 @@ Example3: "   hard        " should return "fun"
 ******************************************************************************/
 
 export const cleanAndFun = (string) => {
-  return string.replace("hard", "fun").trim();
-}
+  return string.replace("hard", "fun").trim(); //string.replace(,) to replace target
+}                                              //trim() removes whitespace from start and end
 
 /******************************************************************************
 6.
@@ -151,19 +151,18 @@ Use array methods to do the following:
 ******************************************************************************/
 
 export function marvelEditor(array) {
-  //your code here
-  array.slice(1);
-  let index = array.indexOf("Doctor Strange");
-  if (index !== -1 && index < array.length) 
+  array.slice(1); //Slice/remove the first element
+  let index = array.indexOf("Doctor Strange"); //Get the index of the target
+  if (index !== -1 && index < array.length)  //Check that our index is valid
   {
-    array[index] = "Skrull";
+    array[index] = "Skrull"; //Redefine target element to new element
   }
-  array.splice(0,3);
-  array.unshift("Captain America");
-  let newString;
-  newString = array.toString();
+  array.splice(0,3); //Splice/remove the first 3 elements, starting from the first
+  array.unshift("Captain America"); //Use unshift to push a new item to the front of the array
+  let newString; //Make new String
+  newString = array.toString(); //Set the new string to the value of the array
   
-  newString = newString.replaceAll(",","💪");
+  newString = newString.replaceAll(",","💪"); //Array.tostring separates elements with ",". Replace with muscles.
   
   return newString;
 
@@ -197,25 +196,24 @@ Return "😎Primitive values only😎"
 ******************************************************************************/
 
 export function coolMaker(varToIdentify) {
-  var stringToReturn;
-  if(typeof varToIdentify === "string")
+  var stringToReturn; //Set up a blank string
+  if(typeof varToIdentify === "string") //Check typeOf our variable, is it a string?
   {
-    stringToReturn = "😎" + varToIdentify + "😎"
+    stringToReturn = "😎" + varToIdentify + "😎" //Append smileys
   }
-  else if(typeof varToIdentify === "number")
+  else if(typeof varToIdentify === "number") //Check for number
   {
-    varToIdentify += varToIdentify;
-    stringToReturn = varToIdentify.toString();
-    stringToReturn = "😎" + stringToReturn + "😎";
+    varToIdentify += varToIdentify; //We plus the variable with itself (or * 2)
+    stringToReturn = varToIdentify.toString(); //Convert number to string
+    stringToReturn = "😎" + stringToReturn + "😎"; //Append smileys
   }
-  else if(typeof varToIdentify === "boolean")
+  else if(typeof varToIdentify === "boolean") //Check for boolean
   {
-    if(varToIdentify) stringToReturn = "😎Yeah😎";
-    else stringToReturn = "😎Chill😎"
+    if(varToIdentify) stringToReturn = "😎Yeah😎"; //If the boolean is true
+    else stringToReturn = "😎Chill😎" //else it will be false
   }
-  else return "😎Primitive values only😎"
+  else return "😎Primitive values only😎" //The variable is not a string, number or boolean
   return stringToReturn;
-
 }
 
 /******************************************************************************
