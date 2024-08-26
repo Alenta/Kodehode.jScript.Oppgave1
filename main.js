@@ -53,7 +53,7 @@ export function makeMeLoud(inputString) {
   let upperCaseString = new String;
   upperCaseString = inputString.toUpperCase();
 
-  upperCaseString != upperCaseString +"!";
+  upperCaseString = upperCaseString +"!";
   return upperCaseString;
 }
 
@@ -80,9 +80,11 @@ The function should return:
 
 export const greeter = (name, time) => {
   if(time < 0) return "Invalid time";
-  if(time > 0 && time < 5) return "Good night "+name;
-  if(time > 6 && time < 11) return "Good morning "+name;
-  if(time > 6 && time < 11) return "Good day "+name;
+  if(time >= 0 && time <= 5) return "Good night "+name;
+  if(time >= 6 && time <= 11) return "Good morning "+name;
+  if(time >= 12 && time <= 17) return "Good day "+name;
+  if(time >= 18 && time <= 23) return "Good evening "+name;
+  if(time > 23) return "Invalid time";
 }
 
 /******************************************************************************
@@ -99,8 +101,10 @@ Example 2: ["One", "Two", "Three", "Four", "Five", "Six"] should return
 ["Two", "Three", "Four", "Five"]
 ******************************************************************************/
 
-export function arrayTrimmer() {
-  //your code here
+export function arrayTrimmer(array) {
+  array = array.slice(1,-1);
+
+  return array;
 }
 
 /******************************************************************************
@@ -122,9 +126,9 @@ Example3: "   hard        " should return "fun"
 
 ******************************************************************************/
 
-export const cleanAndFun = () => {
-  //your code here
-};
+export const cleanAndFun = (string) => {
+  return string.replace("hard", "fun").trim();
+}
 
 /******************************************************************************
 6.
@@ -146,8 +150,23 @@ Use array methods to do the following:
  Return the resulting array.
 ******************************************************************************/
 
-export function marvelEditor() {
+export function marvelEditor(array) {
   //your code here
+  array.slice(1);
+  let index = array.indexOf("Doctor Strange");
+  if (index !== -1 && index < array.length) 
+  {
+    array[index] = "Skrull";
+  }
+  array.splice(0,3);
+  array.unshift("Captain America");
+  let newString;
+  newString = array.toString();
+  
+  newString = newString.replaceAll(",","💪");
+  
+  return newString;
+
 }
 
 /******************************************************************************
@@ -177,8 +196,26 @@ Return "😎Primitive values only😎"
 
 ******************************************************************************/
 
-export function coolMaker() {
-  //your code here
+export function coolMaker(varToIdentify) {
+  var stringToReturn;
+  if(typeof varToIdentify === "string")
+  {
+    stringToReturn = "😎" + varToIdentify + "😎"
+  }
+  else if(typeof varToIdentify === "number")
+  {
+    varToIdentify += varToIdentify;
+    stringToReturn = varToIdentify.toString();
+    stringToReturn = "😎" + stringToReturn + "😎";
+  }
+  else if(typeof varToIdentify === "boolean")
+  {
+    if(varToIdentify) stringToReturn = "😎Yeah😎";
+    else stringToReturn = "😎Chill😎"
+  }
+  else return "😎Primitive values only😎"
+  return stringToReturn;
+
 }
 
 /******************************************************************************
