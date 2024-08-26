@@ -15,8 +15,7 @@ Read the terminal output before and after to see the difference
 ******************************************************************************/
 
 export function start() {
-  //your code here
-  // return true
+  return true;
 };
 
 /******************************************************************************
@@ -30,10 +29,14 @@ received is an even number.
 
 HINT: Use the modulo operator (%) Google it! 😊
 ******************************************************************************/
-
-export const oddOrEven = () => {
-  //your code here
-};
+export const oddOrEven = (number) => {
+  if(number % 2 === 0)
+  {
+    return "Even";
+  }
+  else { return "Odd"; } 
+  
+}
 
 /******************************************************************************
 2.
@@ -46,9 +49,12 @@ in upper case with an exclamation mark at the end.
 Example: "This is cool" should return "THIS IS COOL!"
 
 ******************************************************************************/
+export function makeMeLoud(inputString) {
+  let upperCaseString = new String;
+  upperCaseString = inputString.toUpperCase();
 
-export function makeMeLoud() {
-  //your code here
+  upperCaseString != upperCaseString +"!";
+  return upperCaseString;
 }
 
 /******************************************************************************
@@ -72,9 +78,12 @@ The function should return:
 
 ******************************************************************************/
 
-export const greeter = () => {
-  //your code here
-};
+export const greeter = (name, time) => {
+  if(time < 0) return "Invalid time";
+  if(time > 0 && time < 5) return "Good night "+name;
+  if(time > 6 && time < 11) return "Good morning "+name;
+  if(time > 6 && time < 11) return "Good day "+name;
+}
 
 /******************************************************************************
 4.
