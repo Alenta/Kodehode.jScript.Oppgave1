@@ -52,8 +52,7 @@ Example: "This is cool" should return "THIS IS COOL!"
 export function makeMeLoud(inputString) {
   let upperCaseString = new String;
   upperCaseString = inputString.toUpperCase();
-
-  upperCaseString != upperCaseString +"!";
+  upperCaseString = upperCaseString +"!";
   return upperCaseString;
 }
 
@@ -79,10 +78,11 @@ The function should return:
 ******************************************************************************/
 
 export const greeter = (name, time) => {
-  if(time < 0) return "Invalid time";
-  if(time > 0 && time < 5) return "Good night "+name;
-  if(time > 6 && time < 11) return "Good morning "+name;
-  if(time > 6 && time < 11) return "Good day "+name;
+  if(time >= 0 && time <= 5) return "Good night "+name;
+  else if(time >= 6 && time <= 11) return "Good morning "+name;
+  else if(time >= 12 && time <= 17) return "Good day "+name;
+  else if(time >= 18 && time <= 23) return "Good evening "+name;
+  else return "invalid time";
 }
 
 /******************************************************************************
