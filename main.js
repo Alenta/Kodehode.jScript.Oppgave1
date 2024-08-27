@@ -123,8 +123,9 @@ Example3: "   hard        " should return "fun"
 
 ******************************************************************************/
 
-export const cleanAndFun = () => {
-  //your code here
+export const cleanAndFun = (string) => {
+  const newString = string.replace("hard","fun").trim();
+  return newString;
 };
 
 /******************************************************************************
