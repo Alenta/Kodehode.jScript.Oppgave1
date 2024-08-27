@@ -148,8 +148,21 @@ Use array methods to do the following:
  Return the resulting array.
 ******************************************************************************/
 
-export function marvelEditor() {
-  //your code here
+export function marvelEditor(array) {
+  array.slice(0);
+  let index = -1
+  index = array.indexOf("Doctor Strange");
+  if(index !== -1)
+  {
+    array.slice(index);
+    array.unshift("Skrull");
+  }
+  array.splice(1,4);
+  array.unshift("Captain America");
+
+  array = array.toString();
+  array = array.replaceAll(",","💪");
+  return array;
 }
 
 /******************************************************************************
