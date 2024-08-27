@@ -82,7 +82,7 @@ export const greeter = (name, time) => {
   else if(time >= 6 && time <= 11) return "Good morning "+name;
   else if(time >= 12 && time <= 17) return "Good day "+name;
   else if(time >= 18 && time <= 23) return "Good evening "+name;
-  else return "invalid time";
+  else return "Invalid time";
 }
 
 /******************************************************************************
@@ -99,8 +99,9 @@ Example 2: ["One", "Two", "Three", "Four", "Five", "Six"] should return
 ["Two", "Three", "Four", "Five"]
 ******************************************************************************/
 
-export function arrayTrimmer() {
-  //your code here
+export function arrayTrimmer(array) {
+  const trimmedArray = array.slice(1,-1);
+  return trimmedArray;
 }
 
 /******************************************************************************
